@@ -91,16 +91,72 @@ const travelReviews = [
 
 // prettier-ignore
 const products = [
-    {index: 0, offer: true, id: 1, productName: 'Work Australia', url: './temp/img-1.jpg' },
-    {index: 1, offer: false, id: 2, productName: 'Work New Zealand', url: './temp/img-2.jpg' },
-    {index: 2, offer: true, id: 3, productName: 'Work and Travel Thailand', url: './temp/img-3.jpg' },
-    {index: 3, offer:false, id: 4, productName: 'Volunteer South Africa', url: './temp/img-4.jpg' },
-    {index: 4, offer: true, id: 5, productName: 'South Africa Lion Sanctuary', url: './temp/img-5.jpg' },
-    {index: 5, offer: false, id: 7, productName: '12 Day Thailand Intro', url: './temp/img-6.jpg' },
-    {index: 6, offer: true, id: 7, productName: '12 Day VIETNAM Intro', url: './temp/img-7.jpg' },
-    {index: 7, offer: false, id: 8, productName: '15 Day Vietnam Intro', url: './temp/img-8.jpg' },
+  {
+    index: 0,
+    text: 'Jumpstart your Aussie journey working amidst stunning landscapes and vibrant city life.',
+    offer: true,
+    id: 1,
+    productName: 'Work Australia',
+    url: './temp/img-1.jpg',
+  },
+  {
+    index: 1,
+    text: 'Experience Kiwi culture firsthand while building career skills in breathtaking surroundings.',
+    offer: false,
+    id: 2,
+    productName: 'Work New Zealand',
+    url: './temp/img-2.jpg',
+  },
+  {
+    index: 2,
+    text: 'Combine rewarding work opportunities with captivating adventures across Thailand’s exotic landscapes.',
+    offer: true,
+    id: 3,
+    productName: 'Work and Travel Thailand',
+    url: './temp/img-3.jpg',
+  },
+  {
+    index: 3,
+    text: 'Support local communities, enjoying wildlife safaris and vibrant South African culture daily.',
+    offer: false,
+    id: 4,
+    productName: 'Volunteer South Africa',
+    url: './temp/img-4.jpg',
+  },
+  {
+    index: 4,
+    text: 'Help protect majestic lions while expanding your conservation knowledge in incredible surroundings.',
+    offer: true,
+    id: 5,
+    productName: 'South Africa Lion Sanctuary',
+    url: './temp/img-5.jpg',
+  },
+  {
+    index: 5,
+    text: 'Immerse yourself in Thai culture and experiences, from temples to tropical beaches.',
+    offer: false,
+    id: 7,
+    productName: '12 Day Thailand Intro',
+    url: './temp/img-6.jpg',
+  },
+  {
+    index: 6,
+    text: 'Explore vibrant cities, historic sites, and scenic wonders on a Vietnam journey.',
+    offer: true,
+    id: 7,
+    productName: '12 Day VIETNAM Intro',
+    url: './temp/img-7.jpg',
+  },
+  {
+    index: 7,
+    text: 'Dive deeper into Vietnam’s culture, cuisine, and landscapes on this immersive trip.',
+    offer: false,
+    id: 8,
+    productName: '15 Day Vietnam Intro',
+    url: './temp/img-8.jpg',
+  },
+]
 
-  ];
 
 export {
   footerLinks,

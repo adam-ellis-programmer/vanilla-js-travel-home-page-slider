@@ -1,4 +1,4 @@
-import { get } from './utls.js';
+import { get } from './utls.js'
 
 import {
   footerLinks,
@@ -9,46 +9,46 @@ import {
   products,
   countries,
   blogs,
-} from './data.js';
+} from './data.js'
 
-const countriesContainer = get('.countries-wrapper');
-const productContainer = get('.product-container');
-const prevBtn = get('.slider-prev');
-const nextBtn = get('.slider-next');
-const blogContainer = get('.fb-box-2');
-const toggelNavBtn = get('.toggle-nav');
-const linksContainer = get('.links-container');
-const reviewsContainer = get('.reviews-container');
-const footerLinksContainer = get('.footer-list-container');
-const socialLinksContainer = get('.social-links-container');
-const mobileLinksUl = get('.links');
-const mainNavUl = get('.main-nav-links');
+const countriesContainer = get('.countries-wrapper')
+const productContainer = get('.product-container')
+const prevBtn = get('.slider-prev')
+const nextBtn = get('.slider-next')
+const blogContainer = get('.fb-box-2')
+const toggelNavBtn = get('.toggle-nav')
+const linksContainer = get('.links-container')
+const reviewsContainer = get('.reviews-container')
+const footerLinksContainer = get('.footer-list-container')
+const socialLinksContainer = get('.social-links-container')
+const mobileLinksUl = get('.links')
+const mainNavUl = get('.main-nav-links')
 
 function toggleNav() {
-  const links = get('.links');
-  const linksContainerHeight = linksContainer.getBoundingClientRect().height;
-  const linksHeight = links.getBoundingClientRect().height;
+  const links = get('.links')
+  const linksContainerHeight = linksContainer.getBoundingClientRect().height
+  const linksHeight = links.getBoundingClientRect().height
 
   if (linksContainerHeight === 0) {
-    linksContainer.style.height = `${linksHeight}px`;
+    linksContainer.style.height = `${linksHeight}px`
   } else {
-    linksContainer.style.height = 0;
+    linksContainer.style.height = 0
   }
 }
 
-toggelNavBtn.addEventListener('click', toggleNav);
+toggelNavBtn.addEventListener('click', toggleNav)
 
 function display() {
   function truncate(textArr, numberOfWords) {
     if (textArr.length > numberOfWords) {
-      const truncatedWords = textArr.slice(0, numberOfWords);
+      const truncatedWords = textArr.slice(0, numberOfWords)
 
-      return truncatedWords.join(' ') + ' ...';
+      return truncatedWords.join(' ') + ' ...'
     }
   }
 
   productContainer.innerHTML = products
-    .map(({ productName, url }) => {
+    .map(({ productName, url, text }) => {
       return `
     <article class="product">
     <div class="img-wrap">
@@ -61,10 +61,7 @@ function display() {
     <div class="product-info">
       <p class="title-text"><span>${productName}</span></p>
       <p class="info">
-        <span
-          >12 Days of amazing fun and adventure for you and your friends
-          to enjoy</span
-        >
+        ${text}
       </p>
       <div class="btn-container">
         <p class="price"><span class="price-span">£4000</span></p>
@@ -72,9 +69,9 @@ function display() {
       </div>
     </div>
   </article>
-    `;
+    `
     })
-    .join(' ');
+    .join(' ')
 
   countriesContainer.innerHTML = countries
     .map(({ countryName, url, moneyOff, fromPrice }) => {
@@ -100,14 +97,14 @@ function display() {
       </div>
     </div>
   </article>
-    `;
+    `
     })
-    .join(' ');
+    .join(' ')
 
   blogContainer.innerHTML = blogs
     .slice(0, 4)
     .map(({ newBlog, author, country, reads, text, url }) => {
-      const snippet = text.split(' ');
+      const snippet = text.split(' ')
       // console.log(snippet);
 
       return `
@@ -130,9 +127,9 @@ function display() {
             Reads
           </div>
        </div>
-    </article>`;
+    </article>`
     })
-    .join(' ');
+    .join(' ')
 
   reviewsContainer.innerHTML = travelReviews
     .map(({ name, reviewText, url }) => {
@@ -159,33 +156,33 @@ function display() {
         </div>
       </div>
     </article>
-      `;
+      `
     })
-    .join(' ');
+    .join(' ')
 
   footerLinksContainer.innerHTML = footerLinks
     .map(({ linkText }) => {
       return `
       <li class="footer-list-item"><a href="#">${linkText}</a></li>
-      `;
+      `
     })
-    .join(' ');
+    .join(' ')
 
   socialLinksContainer.innerHTML = socialLinks
     .map(({ classes }) => {
       return `
       <li><a href="#"> <i class="${classes}"></i> </a></li>
-      `;
+      `
     })
-    .join(' ');
+    .join(' ')
 
   mobileLinksUl.innerHTML = mobileLinks
     .map(({ linkText }) => {
       return `
       <li><a class="nav-link" href="#">${linkText}</a></li>
-      `;
+      `
     })
-    .join(' ');
+    .join(' ')
 
   // prettier-ignore
   mainNavUl.innerHTML = mainNavLinks.map(({linkText}) => {
@@ -196,20 +193,20 @@ function display() {
 }
 
 nextBtn.addEventListener('click', () => {
-  const containerWidth = productContainer.getBoundingClientRect().width;
-  productContainer.scrollLeft += containerWidth;
-  console.log(containerWidth);
-});
+  const containerWidth = productContainer.getBoundingClientRect().width
+  productContainer.scrollLeft += containerWidth
+  console.log(containerWidth)
+})
 
 // background image and dynamic numbering ./img/pic${i}
 prevBtn.addEventListener('click', () => {
-  const containerWidth = productContainer.getBoundingClientRect().width;
-  productContainer.scrollLeft -= containerWidth;
-  console.log(containerWidth);
-});
+  const containerWidth = productContainer.getBoundingClientRect().width
+  productContainer.scrollLeft -= containerWidth
+  console.log(containerWidth)
+})
 
 window.addEventListener('resize', () => {
-  console.log(window.innerWidth);
-});
+  console.log(window.innerWidth)
+})
 
-document.addEventListener('DOMContentLoaded', display);
+document.addEventListener('DOMContentLoaded', display)
